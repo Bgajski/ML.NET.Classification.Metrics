@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- NuGet package identity -->
+		<PackageId>ML.NET.Classification.Metrics</PackageId>
+		<Title>ML.NET Classification Metrics (ROC/AUC)</Title>
+		<PackageTags>mlnet;metrics;roc;auc;classification</PackageTags>
+		<Version>0.1.1</Version>
+		<Authors>Bgajski</Authors>
+		<Description>Unofficial ROC curve generation and AUC calculation extension for ML.NET.</Description>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/Bgajski/ML.NET.Classifier</RepositoryUrl>
+
+		<!-- Produce .nupkg on build -->
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+		<!-- Recommended -->
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<!-- Pack the native DLL into the NuGet -->
+	<ItemGroup>
+		<None Include="runtimes\win-x64\native\coremetrics.dll"
+			  Pack="true"
+			  PackagePath="runtimes/win-x64/native/" />
+	</ItemGroup>
+
+	<!-- Pack README + LICENSE into the NuGet -->
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="\" />
+		<None Include="LICENSE.txt" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+</Project>
