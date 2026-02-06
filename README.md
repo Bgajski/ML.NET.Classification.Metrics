@@ -87,7 +87,7 @@ EvaluateRoc returns a MetricsCurve<RocPoint>:
 ## NuGet package
 
 1. Add the NuGet package: 
-- dotnet add package ML.NET.Classification.Metrics --version 0.1.2
+- dotnet add package ML.NET.Classification.Metrics --version 0.1.4
 
 2. Import the namespace in your code
 - using ML.NET.Metrics.Evaluation.Public;
